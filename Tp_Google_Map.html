@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TP Google Maps avec Leaflet</title>
+
+  <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+  <style>
+    /* Reset et mise en page */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    #left-sider{
+      position: absolute;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100%;
+      background: white;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: left 1s ease;
+      z-index: 10000;
+    }
+
+    #left-sider.open{
+      left: 0;
+    }
+
+    #left-sider button{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 3000;
+      font-size: 24px;
+      background: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /* Sidebar à gauche */
+    #sidebar {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 100%;
+      background: #fff;
+      padding: 1rem;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    #sidebar img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+    /* Carte à droite, prend le reste */
+    #map {
+      position: absolute;
+      top: 0;
+      left: 73px;
+      right: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="left-sider">
+    <button id="close-left-sider">X</button>
+  </div>
+  <div class="map-container">
+    <!-- 3. Sidebar initiale -->
+    <div id="sidebar">
+      <span id="hamburger-btn" style="cursor: pointer; width: 32px; height: 32px;">☰</span>
+      <span></span>
+    </div>
+    <!-- Conteneur de la carte -->
+    <div id="map"></div>
+  </div>
+  
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <script>
+    // 1) Initialisation de la carte centrée sur Abidjan (exemple)
+    const map = L.map('map').setView([5.3480, -4.0142], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    //Toggle left-sider
+    const leftSider = document.getElementById("left-sider");
+    const  toggleLeftSider = document.getElementById("hamburger-btn");
+      toggleLeftSider.addEventListener('click', () => {
+        const isOpen = leftSider .classList.toggle('open');
+        if(isOpen){
+          leftSider.style.left = "0";
+        }else{
+          leftSider.style.left = "-300px";
+        }       
+    });
+
+    //Close left-sider
+    const cloaseBtn = document.getElementById("close-left-sider");
+      cloaseBtn.addEventListener('click', () => {
+        leftSider.style.left = "-300px";
+    });
+
+  </script>
+
+</body>
+</html>
