@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Cathédrale Saint-Paul",
+    "type": "Église",
+    "lat": 5.3456,
+    "lng": -4.0123,
+    "description": "Magnifique cathédrale de style moderne située au cœur d'Abidjan. Un lieu de culte emblématique avec une architecture impressionnante."
+  },
+  {
+    "name": "Parc national du Banco",
+    "type": "Parc",
+    "lat": 5.3800,
+    "lng": -4.0300,
+    "description": "Forêt tropicale urbaine offrant un espace vert naturel au milieu de la ville. Idéal pour la randonnée et l'observation de la nature."
+  },
+  {
+    "name": "Musée des Civilisations de Côte d'Ivoire",
+    "type": "Musée",
+    "lat": 5.3440,
+    "lng": -4.0170,
+    "description": "Musée présentant la riche histoire et culture ivoirienne. Collections d'art traditionnel, masques et objets historiques."
+  },
+  {
+    "name": "Université Félix Houphouët-Boigny",
+    "type": "Université",
+    "lat": 5.3592,
+    "lng": -3.9965,
+    "description": "Principal établissement d'enseignement supérieur de Côte d'Ivoire. Campus moderne avec de nombreuses facultés et centres de recherche."
+  },
+  {
+    "name": "Hôpital Général de Treichville",
+    "type": "Hôpital",
+    "lat": 5.3045,
+    "lng": -4.0076,
+    "description": "Centre hospitalier principal offrant des soins médicaux de qualité. Services d'urgence et spécialisations multiples."
+  },
+  {
+    "name": "Cap Sud Abidjan",
+    "type": "Centre commercial",
+    "lat": 5.2960,
+    "lng": -3.9865,
+    "description": "Grand centre commercial moderne avec boutiques, restaurants et espaces de loisirs. Destination shopping populaire d'Abidjan."
+  },
+  {
+    "name": "Aéroport international Félix-Houphouët-Boigny",
+    "type": "Aéroport",
+    "lat": 5.2560,
+    "lng": -3.9263,
+    "description": "Principal aéroport international de Côte d'Ivoire. Porte d'entrée principale pour les voyageurs internationaux."
+  }
+]
