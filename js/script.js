@@ -86,18 +86,10 @@
 
     //Toggle left-sider
     const leftSider = document.getElementById("left-sider");
-    const  toggleLeftSider = document.getElementById("hamburger-btn");
-      toggleLeftSider.addEventListener('click', () => {
-        const isOpen = leftSider .classList.toggle('open');
-        if(isOpen){
-          leftSider.style.left = "0";
-        }else{
-          leftSider.style.left = "-300px";
-        }       
-    });
+   
 
     //Close left-sider
     const cloaseBtn = document.getElementById("close-left-sider");
       cloaseBtn.addEventListener('click', () => {
-        leftSider.style.left = "-300px";
+        leftSider.style.left = "-400px";
     });

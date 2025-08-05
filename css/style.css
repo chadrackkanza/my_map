@@ -8,7 +8,7 @@
     #left-sider{
       position: absolute;
       top: 0;
-      left: -300px;
+      left: -400px;
       width: 300px;
       height: 100%;
       background: white;
@@ -18,7 +18,7 @@
       overflow: hidden;
       transition: left 1s ease;
       z-index: 10000;
-      margin-left: 20px;
+      padding: 20px;
 
     }
 
@@ -42,11 +42,11 @@
     /* Sidebar à gauche */
     #sidebar {
       position: absolute;
-      display: flex;
       flex-direction: column;
       align-items: center;
       top: 0;
-      left: 0;
+
+      left: -40px;
       width: 40px;
       height: 100%;
       background: #fff;
@@ -66,7 +66,7 @@
     #map {
       position: absolute;
       top: 0;
-      left: 73px;
+      left: 0;
       right: 0;
       bottom: 0;
     }
@@ -81,7 +81,6 @@
       display: flex;
       justify-content:space-between;
       align-items: center;
-      padding: 10px;
     }
 
     .navbar {
@@ -108,6 +107,30 @@
       background-color: #fff;
       color: black;
       border: 1px solid #ccc;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    #search-bar {
+      display: flex;
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    #search-bar input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 5px;
+    }
+
+    #search-bar button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
       border-radius: 20px;
       cursor: pointer;
     }
