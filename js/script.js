@@ -45,7 +45,28 @@
       });
     }
 
-   
+   fetch('js/places.json')
+    .then(response => response.json())
+    .then(data => {
+          placesData = data;
+          placesData.forEach(place => {
+              const marker = L.marker([place.lat, place.lng], {
+                icon: getMarkerIcon(place.type)
+              })
+              .addTo(map);
+
+              marker.on('click', () => {
+                // toggle the left sider
+                const leftSider = document.getElementById("left-sider");
+                leftSider.style.left = "0";
+                // Afficher les détails du lieu dans le panneau latéral
+                document.getElementById('place-title').innerText = place.name;
+                document.getElementById('place-description').innerText = place.description;
+              });
+             
+              allMarkers.push(marker);
+          });
+      });
   
     //Toggle left-sider
     const leftSider = document.getElementById("left-sider");
