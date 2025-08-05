@@ -45,6 +45,12 @@
       });
     }
 
+    function createFilterButton(place) {
+        const button = document.createElement('button');
+        button.innerText = place.type;
+        document.querySelector('.filter-buttons').appendChild(button);
+    }
+
    fetch('js/places.json')
     .then(response => response.json())
     .then(data => {
@@ -63,11 +69,21 @@
                 document.getElementById('place-title').innerText = place.name;
                 document.getElementById('place-description').innerText = place.description;
               });
+
+              
              
               allMarkers.push(marker);
+
+              createFilterButton( place);
           });
       });
-  
+
+    // Buttons for each type of place
+    const buttons = document.querySelectorAll('.filter-buttons button');
+
+
+    
+
     //Toggle left-sider
     const leftSider = document.getElementById("left-sider");
     const  toggleLeftSider = document.getElementById("hamburger-btn");
