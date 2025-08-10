@@ -93,3 +93,36 @@
       cloaseBtn.addEventListener('click', () => {
         leftSider.style.left = "-400px";
     });
+
+    //--------------------------Toggle other-layers
+    const MainLayer = document.getElementById('image-satellite');
+    const SecondLayer = document.getElementById('other-layers');
+
+    let hideTimeout; // variable pour stocker le timer
+
+    // Quand on survole l'image satellite
+    MainLayer.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout); // Annule un éventuel timer
+      SecondLayer.style.display = 'flex';
+    });
+
+    // Quand on quitte l'image satellite
+    MainLayer.addEventListener('mouseleave', () => {
+      if (!SecondLayer.matches(':hover')) {
+        hideTimeout = setTimeout(() => {
+          SecondLayer.style.display = 'none';
+        }, 1000); // 5000 ms = 5s
+      }
+    });
+
+    // Quand on survole SecondLayer
+    SecondLayer.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout); // Empêche de cacher pendant le survol
+    });
+
+    // Quand on quitte SecondLayer
+    SecondLayer.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(() => {
+        SecondLayer.style.display = 'none';
+      }, 1000);
+    });

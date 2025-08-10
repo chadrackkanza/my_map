@@ -1,4 +1,10 @@
     /* Reset et mise en page */
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -133,4 +139,69 @@
       padding: 5px 10px;
       border-radius: 20px;
       cursor: pointer;
+    }
+
+    .layer-controller{
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .layer-controller img{
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      border-radius: 5%;
+    }
+    .layer-controller span{
+      font-size: 12px;
+      text-align: center;
+    }
+
+    #image-satellite{
+      display: flex;
+      flex-direction: column;
+      color: white;
+      border: 0.5px solid white;
+      align-items: center;
+    }
+
+    #image-satellite span{
+      position: absolute;
+      bottom: 0.1rem;
+    }
+
+    #image-satellite img:hover{
+      border: 3px solid white;
+      border-radius: 5%;
+    }
+
+    #other-layers{
+      position: relative;
+      display: none;
+      flex-direction: row;
+      gap: 10px;
+      background: white;
+      padding: 10px;
+      border-radius: 5%;
+      transition: all 0.5s ease ;
+    }
+
+    .other-layers-image{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .other-layers-image img:hover{
+      border:2px solid blue;
+      
+    }
+    
+    .other-layers-image:hover span{
+      color: darkblue;
     }

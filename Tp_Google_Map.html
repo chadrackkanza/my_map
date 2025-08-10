@@ -6,9 +6,11 @@
   <title>TP Google Maps avec Leaflet</title>
 
   <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="css/style.css" />
 
@@ -41,6 +43,30 @@
 
     <!-- Conteneur de la carte -->
     <div id="map"></div>
+
+    <div class="layer-controller">
+      <div id="image-satellite">
+        <img src="assets/images/image-satellite.jpg" alt="layer-satellite">
+        <span><i class="fa-solid fa-layer-group"></i>Layers</span>
+      </div>
+      <div id="other-layers">
+        <div class="other-layers-image"><img src="assets/images/image-terrain.png" alt="-layer-terrain">
+          <span>terrain</span>
+        </div>
+        <div class="other-layers-image"><img src="assets/images/image-traffic.jpg" alt="-layer-traffic">
+          <span>traffic</span>
+        </div>
+        <div class="other-layers-image"><img src="assets/images/image-terrain.png" alt="-layer-terrain">
+          <span>terrain</span>
+        </div>
+        <div class="other-layers-image"><img src="assets/images/images-transit.jpeg" alt="layer-transit">
+        <span>transit</span>
+        </div>
+        <div class="other-layers-image"><img src="assets/images/image-biking.png" alt="layer-biking">
+          <span>biking</span>
+        </div>
+      </div>
+    </div>
   </div>
   
 
